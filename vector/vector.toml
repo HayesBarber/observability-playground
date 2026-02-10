@@ -1,0 +1,19 @@
+# Read from stdin
+[sources.stdin]
+type = "stdin"
+
+# Parse JSON from stdin
+[transforms.parse_json]
+type = "remap"
+inputs = ["stdin"]
+source = '''
+. = parse_json!(string!(.message))
+'''
+
+# Write to a file
+[sinks.out]
+type = "file"
+inputs = ["parse_json"]
+path = "./data/vector-output.json"
+encoding.codec = "json"
+
