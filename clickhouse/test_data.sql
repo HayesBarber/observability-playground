@@ -1,0 +1,18 @@
+INSERT INTO observability.logs VALUES
+(now() - INTERVAL 5 MINUTE, now(), 'req-001', 'trace-001', 'info', 'request.end', '/health', 'GET', 200, 3, 'fast', NULL, '[]', NULL),
+(now() - INTERVAL 4 MINUTE, now(), 'req-002', 'trace-002', 'info', 'request.end', '/health', 'GET', 200, 4, 'fast', NULL, '[]', NULL),
+(now() - INTERVAL 3 MINUTE, now(), 'req-003', 'trace-003', 'info', 'request.end', '/health', 'GET', 200, 2, 'fast', NULL, '[]', NULL),
+(now() - INTERVAL 5 MINUTE, now(), 'req-004', 'trace-004', 'info', 'request.end', '/items/:id', 'GET', 200, 15, 'fast', NULL, '[]', NULL),
+(now() - INTERVAL 4 MINUTE, now(), 'req-005', 'trace-005', 'info', 'request.end', '/items/:id', 'GET', 200, 18, 'fast', NULL, '[]', NULL),
+(now() - INTERVAL 3 MINUTE, now(), 'req-006', 'trace-006', 'info', 'request.end', '/items/:id', 'GET', 200, 85, 'medium', NULL, '[]', NULL),
+(now() - INTERVAL 2 MINUTE, now(), 'req-007', 'trace-007', 'info', 'request.end', '/items/:id', 'GET', 200, 120, 'medium', NULL, '[]', NULL),
+(now() - INTERVAL 1 MINUTE, now(), 'req-008', 'trace-008', 'error', 'request.end', '/items/:id', 'GET', 500, 450, 'slow', 'downstream_error', '[]', NULL),
+(now() - INTERVAL 30 SECOND, now(), 'req-009', 'trace-009', 'error', 'request.end', '/items/:id', 'GET', 404, 350, 'slow', 'not_found', '[]', NULL),
+(now() - INTERVAL 15 SECOND, now(), 'req-010', 'trace-010', 'error', 'request.end', '/items/:id', 'GET', 504, 600, 'slow', 'timeout', '[]', NULL),
+(now() - INTERVAL 5 MINUTE, now(), 'req-011', 'trace-011', 'info', 'request.end', '/items', 'POST', 201, 65, 'medium', NULL, '[]', 245),
+(now() - INTERVAL 3 MINUTE, now(), 'req-012', 'trace-012', 'info', 'request.end', '/items', 'POST', 201, 72, 'medium', NULL, '[]', 189),
+(now() - INTERVAL 2 MINUTE, now(), 'req-013', 'trace-013', 'error', 'request.end', '/items', 'POST', 400, 25, 'fast', 'validation_error', '[]', 156),
+(now() - INTERVAL 1 MINUTE, now(), 'req-014', 'trace-014', 'error', 'request.end', '/items', 'POST', 503, 95, 'medium', 'database_error', '[]', 512),
+(now() - INTERVAL 4 MINUTE, now(), 'req-015', 'trace-015', 'info', 'request.end', '/fanout', 'GET', 200, 150, 'medium', NULL, '[{"call_id":"call-001","latency_ms":45,"success":1,"error_type":null},{"call_id":"call-002","latency_ms":89,"success":1,"error_type":null}]', NULL),
+(now() - INTERVAL 2 MINUTE, now(), 'req-016', 'trace-016', 'warn', 'request.end', '/fanout', 'GET', 200, 200, 'medium', 'partial_downstream_failure', '[{"call_id":"call-003","latency_ms":30,"success":1,"error_type":null},{"call_id":"call-004","latency_ms":120,"success":0,"error_type":"downstream_error"},{"call_id":"call-005","latency_ms":55,"success":1,"error_type":null}]', NULL),
+(now() - INTERVAL 30 SECOND, now(), 'req-017', 'trace-017', 'warn', 'request.end', '/fanout', 'GET', 200, 180, 'medium', 'partial_downstream_failure', '[{"call_id":"call-006","latency_ms":80,"success":0,"error_type":"downstream_error"},{"call_id":"call-007","latency_ms":95,"success":0,"error_type":"timeout"}]', NULL);
