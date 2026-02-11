@@ -24,4 +24,5 @@ endpoint = "${CLICKHOUSE_HOST:-http://localhost:8123}"
 database = "${CLICKHOUSE_DATABASE:-observability}"
 table = "${CLICKHOUSE_TABLE:-logs}"
 skip_unknown_fields = true
+format = "json_each_row"
 
