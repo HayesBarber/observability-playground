@@ -8,13 +8,6 @@ drop_on_error = true
 source = '''
 . = parse_json!(string!(.message))
 .ingestion_timestamp = now()
-
-# Convert downstream_calls array to JSON string if present
-if exists(.downstream_calls) {
-  .downstream_calls = to_string!(.downstream_calls)
-} else {
-  .downstream_calls = "[]"
-}
 '''
 
 [sinks.clickhouse]
