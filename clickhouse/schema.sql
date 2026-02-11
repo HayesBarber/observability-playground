@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS observability.logs (
     payload_size Nullable(UInt32)
 )
 ENGINE = MergeTree()
-PARTITION BY toDate(timestamp)
+PARTITION BY toYYYYMMDD(timestamp)
 ORDER BY (timestamp, route, status, request_id)
 TTL timestamp + INTERVAL 1 DAY;
 
