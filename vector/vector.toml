@@ -1,14 +1,6 @@
 [sources.stdin]
 type = "stdin"
 
-[transforms.payload]
-type = "remap"
-inputs = ["stdin"]
-drop_on_error = true
-source = '''
-.payload = .
-'''
-
 [sinks.postgres]
 type = "postgres"
 inputs = ["payload"]
