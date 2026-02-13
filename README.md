@@ -10,11 +10,19 @@ Traffic flows from the k6 load generator through Nginx to Bun HTTP servers. Serv
 
 ## Quick Start
 
+Clone the repo
+
 ```bash
-docker compose up --build
+git clone https://github.com/HayesBarber/structured-logs-observability.git
+cd structured-logs-observability
+```
+Start the services
+
+```bash
+docker compose up -d
 ```
 
-The services will start on the ports below. Once running, generate load with k6:
+Once running, generate load with k6:
 
 ```bash
 k6 run ./k6/load.js
