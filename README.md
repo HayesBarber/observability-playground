@@ -43,6 +43,8 @@ Open http://localhost:3000, create a PostgreSQL datasource with name `grafana-po
 - P95 latency
 - Requests by route
 
+![Dashboard](images/dashboard.png)
+
 ## Tech Stack
 
 - **Bun** — HTTP server runtime
