@@ -36,7 +36,7 @@ k6 run ./k6/load.js
 
 ## Grafana
 
-Open http://localhost:3000 and import the dashboard to see:
+Open http://localhost:3000, create a PostgreSQL datasource with name `grafana-postgresql-datasource`, and import the `./grafana/dashboard.json` dashboard to see:
 
 - Requests per second (TPS)
 - Error rates
