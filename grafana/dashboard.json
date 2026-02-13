@@ -113,7 +113,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\n  date_trunc('second', timestamp) AS second,\n  COUNT(*) AS tps\nFROM\n  logs\nGROUP BY\n  second\nORDER BY\n  second;",
+          "rawSql": "SELECT\n  $__timeGroup(timestamp, '1s') AS time,\n  COUNT(*) AS tps\nFROM\n  logs\nWHERE\n  $__timeFilter(timestamp)\nGROUP BY\n  time\nORDER BY\n  time;",
           "refId": "A",
           "sql": {
             "columns": [
@@ -632,12 +632,12 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Dashboard",
   "uid": "adbf229",
-  "version": 8
+  "version": 9
 }
