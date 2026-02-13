@@ -1,6 +1,6 @@
 # Log-based Observability
 
-A proof-of-concept demonstrating how meaningful observability signals can be extracted from high-volume, high-cardinality logs.
+A proof-of-concept demonstrating how meaningful observability signals can be extracted from structured logs.
 
 ## Architecture
 
